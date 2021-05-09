@@ -1,1 +1,1 @@
-export const BASE_URL = 'https://dsvendas-brunelli.herokuapp.com';
+export const BASE_URL = process.env.BACKEND_URL ?? 'http://localhost:8080';
