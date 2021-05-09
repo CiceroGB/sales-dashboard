@@ -11,27 +11,27 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 
-@Entity
+@Entity	
 @Table(name = "tb_sales")
 public class Sale {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private Long visited;
-	private Long deals;
+	private Integer visited; 
+	private Integer deals;
 	private Double amount;
 	private LocalDate date;
-	
 	
 	@ManyToOne
 	@JoinColumn(name = "seller_id")
 	private Seller seller;
 	
 	public Sale() {
+		
 	}
 
-	public Sale(Long id, Long visited, Long deals, Double amount, LocalDate date, Seller seller) {
+	public Sale(Long id, Integer visited, Integer deals, Double amount, LocalDate date, Seller seller) {
 		this.id = id;
 		this.visited = visited;
 		this.deals = deals;
@@ -48,19 +48,19 @@ public class Sale {
 		this.id = id;
 	}
 
-	public Long getVisited() {
+	public Integer getVisited() {
 		return visited;
 	}
 
-	public void setVisited(Long visited) {
+	public void setVisited(Integer visited) {
 		this.visited = visited;
 	}
 
-	public Long getDeals() {
+	public Integer getDeals() {
 		return deals;
 	}
 
-	public void setDeals(Long deals) {
+	public void setDeals(Integer deals) {
 		this.deals = deals;
 	}
 
@@ -86,7 +86,6 @@ public class Sale {
 
 	public void setSeller(Seller seller) {
 		this.seller = seller;
-	}
-	
-	
+	}	
+
 }
